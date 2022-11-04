@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
+import { usuariosLogados, loginUsuario } from 'src/modelos/loginUsuarios';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  usuarioPermitido: loginUsuario = usuariosLogados;
   classesNormal: string[] = ["modal", "modal-signin", "d-block", "bg-secondary", "py-5"]
   alertClass: string[] = ["alert", "alert-danger", "w-50", "mx-auto"]
   classesLogin: string[] = this.classesNormal

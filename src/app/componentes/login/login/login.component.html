@@ -19,7 +19,7 @@
       </div>
     </div>
     <div id="alerta" [ngClass]="alertClass" class="alert alert-danger w-50 mx-auto" role="alert">
-      ops! no momento apenas usuario: <mark>lucas</mark> senha:<mark>1234</mark>    tem acesso
+      ops! no momento apenas usuario: <mark>{{ usuarioPermitido.nome }}</mark> senha:<mark>{{ usuarioPermitido.senha }}</mark>    tem acesso
     </div>
   </div>
   
