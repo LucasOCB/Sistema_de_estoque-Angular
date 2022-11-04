@@ -1,0 +1,16 @@
+
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Bla Bla estoque</span>
+    </a>
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a routerLink="{{ cadastro }}" class="nav-link active" aria-current="page">cadastro produtos</a></li>
+      <li class="nav-item navEstoque">
+        <a routerLink="{{ estoque }}" class="nav-link active" aria-current="page">estoque</a>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">{{ quantidadeEstoque }}</span>
+      </li>
+    </ul>
+  </header>
+</div>

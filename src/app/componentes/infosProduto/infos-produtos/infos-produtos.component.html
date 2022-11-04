@@ -1,0 +1,32 @@
+<ul class="ul" *ngIf="produtoExiste == true; else semProduto">
+    <li class="li">
+        <div class="card">
+            <img [src]="produto.imagem" class="card-img-top" alt="">
+            <div class="container">
+                <div class="card-body">
+                    <h1 class="card-title">Produto : {{ produto.nome }}</h1>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item itensLista"><h4><mark>QUANTIDADE : </mark>{{ produto.quantidade }}</h4></li>
+                    <li class="list-group-item itensLista"><h4><mark>IDENTIFICADOR : </mark> #{{ produto.id }}</h4></li>
+                    <li class="list-group-item itensLista"><h4><mark>MARCA : </mark> {{ produto.marca }}</h4></li>
+                    <li class="list-group-item itensLista"><h4><mark>TIPO : </mark> {{ produto.tipo }}</h4></li>
+                    <li class="list-group-item itensLista"><h4><mark>TAMANHO : </mark> {{ produto.tamanho }}</h4></li>
+                </ul>
+            </div>
+        </div>
+        <div class="descricao">
+            <li class="list-group-item itensLista descricao"><h4><mark>DESCRICAO : </mark>   {{ produto.descricao }}</h4></li>
+            <div class="botoes">
+                <button class="btn btn-outline-danger" (click)="deleteProduto()">DELETAR</button>
+                <a routerLink="/atualizar/{{produto.id}}" class="text-warning"><button type="button" class="btn btn-outline-warning botaoLink">Atualizar</button></a>
+                <a routerLink="/estoque" class="text-primary"><button type="button" class="btn btn-outline-primary botaoLink">voltar</button></a>
+            </div>
+        </div>
+    </li>
+</ul>
+<ng-template #semProduto>
+    <div id="alerta" [ngClass]="alertClass" class="alert alert-danger w-50 mx-auto" role="alert">
+        ops! não existe nenhum produto com este identificador <mark>{{ identificador }}</mark> 
+    </div>
+</ng-template>

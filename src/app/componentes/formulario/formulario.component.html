@@ -1,0 +1,94 @@
+
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Registro de produtos</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-row m-b-55">
+                        <div class="name">Nome do produto:</div>
+                        <div class="value">
+                            <div class="row row-space">
+                                <div class="">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" [(ngModel)]="nome" type="text" name="nome" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Tipo do produto:</div>
+                        <input class="form-control inputDeta" name="tipo" [(ngModel)]="tipo" list="datalistOptionsTipo" id="exampleDataListTipo" placeholder="Escolha um tipo..." required>
+                        <datalist id="datalistOptionsTipo">
+                            <ul>
+                                <li *ngFor="let tipo of tiposDeProduto">
+                                    <option value="{{ tipo.tipo }}"></option>
+                                </li>
+                            </ul>
+
+                        </datalist>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">quantidade:</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" [(ngModel)]="quantidade" type="text" name="quantidade" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">tamanho:</div>
+                        <input class="form-control inputDeta" name="tamanho" [(ngModel)]="tamanho" list="datalistOptionsTam" id="exampleDataListTam" placeholder="Escolha um ...">
+                        <datalist id="datalistOptionsTam">
+                            <ul>
+                                <li *ngFor="let tamanho of tiposDeTamanhos">
+                                    <option value="{{ tamanho.tamanho }}"></option>
+                                </li>
+                            </ul>
+                        </datalist>
+                    </div>
+                    <div class="form-row">
+                        <label for="exampleDataListMarca" class="form-label name">Marca: </label>
+                        <input class="form-control inputDeta" name="marca" [(ngModel)]="marca" list="datalistOptionsMarca" id="exampleDataListMarca" placeholder="Escolha uma marca..." required>
+                        <datalist id="datalistOptionsMarca">
+                            <ul>
+                                <li *ngFor="let marca of tiposDeMarca">
+                                    <option value="{{ marca.tipoMarca }}"></option>
+                                </li>
+                            </ul>
+                        </datalist>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">descrição:</div>
+                        <div class="value textarea">
+                            <div class="input-group">
+                                <div class="value">
+                                    <div class="input-group">
+                                        <textarea  class="" [(ngModel)]="descricao" name="descricao" id="textarea" cols="30" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="value">
+                            <div class="input-group divImagem">
+                                <label for="imagem" class="escolhaImagem">escolha uma imagem: </label>
+                                <input (change)="guardarImagem($event)" [(ngModel)]="imagem" type="file" name="imagem" id="imagem">
+                                <div class="imagemEscolhida">
+                                    <img [src]="nomeImagem" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button (click)="criarNovoProduto()" class="btn btn--radius-2 btn--red" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

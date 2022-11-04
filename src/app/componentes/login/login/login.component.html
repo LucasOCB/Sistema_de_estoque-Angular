@@ -1,0 +1,25 @@
+<div [ngClass]="classesLogin" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h2 class="fw-bold mb-0">Login</h2>
+        </div>
+        <div class="modal-body p-5 pt-0">
+            <div class="form-floating mb-3">
+              <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Usuario</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password"  [(ngModel)]="senha" name="senha" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" (click)="fazerLogin()" >Logar</button>
+            <p class="acessarLink"><a *ngIf="mostrarBotao" routerLink="home" (click)="entrar()">acessar a pagina</a></p>
+        </div>
+      </div>
+    </div>
+    <div id="alerta" [ngClass]="alertClass" class="alert alert-danger w-50 mx-auto" role="alert">
+      ops! no momento apenas usuario: <mark>lucas</mark> senha:<mark>1234</mark>    tem acesso
+    </div>
+  </div>
+  

@@ -1,0 +1,14 @@
+{
+  "produtos": [
+    {
+      "nome": "camiseta de porcelana com borda rosa e testes pois pode haver nomes extensos",
+      "id": 1,
+      "marca": "marca2",
+      "tipo": "camiseta regata",
+      "descricao": "lorem opcional",
+      "quantidade": 5,
+      "tamanho": "M",
+      "imagem": "/assets/icone-loja-colorido.png"
+    }
+  ]
+}

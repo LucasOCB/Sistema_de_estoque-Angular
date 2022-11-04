@@ -1,0 +1,40 @@
+<div id="container">
+    <div class="pesquisa">
+        <h1>CATEGORIA</h1>
+<!-- infelizmente aqui foi o unico local com codigo mal feito, não consegui diminuir a repetição por falta de conhecimentos do framework-->
+        <ul class="categoria">
+            <li (click)="atualizarMensagemEstoqueVazio('geral')" (click)="getDadosApi()">Geral ( {{ quantidadeEstoque }} )</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[0])" (click)="getDadosTipo(tipos[0])">{{ tipos[0] }} ({{ quantidadeEstoquePorTipo[0]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[1])" (click)="getDadosTipo(tipos[1])">{{ tipos[1] }} ({{ quantidadeEstoquePorTipo[1]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[2])" (click)="getDadosTipo(tipos[2])">{{ tipos[2] }} ({{ quantidadeEstoquePorTipo[2]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[3])" (click)="getDadosTipo(tipos[3])">{{ tipos[3] }} ({{ quantidadeEstoquePorTipo[3]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[4])" (click)="getDadosTipo(tipos[4])">{{ tipos[4] }} ({{ quantidadeEstoquePorTipo[4]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[5])" (click)="getDadosTipo(tipos[5])">{{ tipos[5] }} ({{ quantidadeEstoquePorTipo[5]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[6])" (click)="getDadosTipo(tipos[6])">{{ tipos[6] }} ({{ quantidadeEstoquePorTipo[6]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[7])" (click)="getDadosTipo(tipos[7])">{{ tipos[7] }} ({{ quantidadeEstoquePorTipo[7]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[8])" (click)="getDadosTipo(tipos[8])">{{ tipos[8] }} ({{ quantidadeEstoquePorTipo[8]}})</li>
+            <li (click)="atualizarMensagemEstoqueVazio(tipos[9])" (click)="getDadosTipo(tipos[9])">{{ tipos[9] }} ({{ quantidadeEstoquePorTipo[9]}})</li>
+        </ul>
+    </div>
+    <ul class="ul" *ngIf="estoque.length > 0; else semProduto">
+        <li class="li" *ngFor="let produto of estoque">
+            <div class="card" style="width: 18rem;">
+                <a routerLink="/estoque/{{produto.id}}">
+                    <img [src]="produto.imagem" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <h1 class="card-title">{{ produto.nome }}</h1>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><p>Quantidade: {{ produto.quantidade }}</p></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<ng-template #semProduto>
+    <div id="alerta" [ngClass]="" class="alert alert-danger w-50 mx-auto" role="alert">
+       {{ mensagemEstoqueVazio }}
+    </div>
+</ng-template>

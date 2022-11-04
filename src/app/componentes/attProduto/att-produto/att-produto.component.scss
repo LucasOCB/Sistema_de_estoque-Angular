@@ -1,0 +1,45 @@
+#div{
+    padding-bottom: 200px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    .separarProdutos{
+        display:flex;
+        justify-content: space-around;
+        .ul{
+            width:400px;
+            .li{
+                .card{
+                    display:flex;
+                    flex-direction: column;
+                    img{
+                        
+                    }
+                    .container{
+        
+                    }
+                }
+                .descricao{
+        
+                }
+            }
+        }
+    }
+    button{
+        padding:20px 0;
+        width:200px;
+        margin:0 auto;
+    }
+}
+li{
+    list-style: none;
+    min:846px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text2{
+    padding-top:8px;
+}

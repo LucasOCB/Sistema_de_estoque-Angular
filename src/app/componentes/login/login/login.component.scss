@@ -1,0 +1,22 @@
+#login{
+    position: absolute;
+    top:0;
+    height:100%;
+}
+.acessarLink{
+    text-align: center;
+    margin-top:10px;
+}
+#alerta{
+    display:none;
+}
+.alertaApareca{
+    display: block !important;
+}
+a{
+    color:red;
+    text-decoration: none;
+}
+mark{
+    background-color: rgb(40, 191, 218);
+}

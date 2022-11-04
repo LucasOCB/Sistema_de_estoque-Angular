@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding:0;
+    // border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ul{
+    margin-top:50px;
+    margin-left:1%;
+    padding-bottom: 100px;
+    .li{
+        .card{
+            display:flex;
+            flex-direction: row;
+            width:95%;
+            img{
+                width:420px;
+                height:420px;
+                padding:5px !important;
+                border: 1px solid black;
+                margin-right:30px;
+            }
+            h1{
+                color:rgb(41, 116, 202);
+            }
+        }
+    }
+}
+li{
+    list-style: none;
+    border-radius: 10px !important;
+}
+mark{
+    background-color: #f6ff00;
+    margin-right:20px;
+}
+.itensLista{
+    padding:10px;
+    margin:10px;
+    background-color: #1999FF;
+}
+#login{
+    position: absolute;
+    top:0;
+    height:100%;
+}
+.acessarLink{
+    text-align: center;
+    margin-top:10px;
+}
+#alerta{
+    text-align: center;
+    padding:30px;
+    // display:none;
+}
+.alertaApareca{
+    display: block !important;
+}
+a{
+    color:red;
+    text-decoration: none;
+}
+.botoes{
+    width:400px;
+    margin:0 auto;
+    padding-left:20px;
+    display:flex;
+    gap:20px;
+    .botaoLink{
+        a{
+            color:rgb(205, 187, 23);
+        }
+        &:hover{
+            a{
+                color:white !important;
+            }
+        }
+    }
+}
+.mark{
+    background-color: rgb(40, 191, 218);
+}
+button{
+    padding:20px;
+    display:block;
+}
+.descricao{
+    width:96.6%;
+}

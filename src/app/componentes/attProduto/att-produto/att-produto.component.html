@@ -1,0 +1,107 @@
+<div id="div">
+    <div class="separarProdutos">
+        <ul class="ul">
+            <li class="li">
+                <div class="card">
+                    <img [src]="produtoOriginal.imagem" class="card-img-top" alt="">
+                    <div class="container">
+                        <div class="card-body">
+                            <h1 class="card-title">Produto original</h1>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="nomeOriginal" name="poNome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Identificador</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="idOriginal" name="poId">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Quantidade</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="quantidadeOriginal" name="poQuantidade">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Tamanho</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="tamanhoOriginal" name="poTamanho">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Tipo</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="tipoOriginal" name="poTipo">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">marca</span>
+                                <input type="text" class="form-control" disabled aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="marcaOriginal" name="poMarca">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Descricao</span>
+                                <textarea class="form-control" disabled id="exampleFormControlTextarea1" rows="3" [(ngModel)]="descricaoOriginal" name="poDescricao"></textarea>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="ul">
+            <li class="li">
+                <div class="card">
+                    <img [src]="produtoOriginal.imagem" class="card-img-top" alt="">
+                    <div class="container">
+                        <div class="card-body">
+                            <h1 class="card-title text2">Produto Atualização</h1>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="nome" name="pmNome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Quantidade</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="quantidade" name="pmQuantidade">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Tamanho</span>
+                                <input class="form-control inputDeta" name="pmTamanho" [(ngModel)]="tamanho" list="datalistOptionsTamanho" id="exampleDataListTamanho" placeholder="Escolha um tipo...">
+                                <datalist id="datalistOptionsTamanho">
+                                    <ul>
+                                        <li *ngFor="let tamanho of tiposDeTamanhos">
+                                            <option value="{{ tamanho.tamanho }}"></option>
+                                        </li>
+                                    </ul>
+                                </datalist>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Tipo</span>
+                                <input class="form-control inputDeta" name="pmTipo" [(ngModel)]="tipo" list="datalistOptionsTipo" id="exampleDataListTipo" placeholder="Escolha um tipo...">
+                                <datalist id="datalistOptionsTipo">
+                                    <ul>
+                                        <li *ngFor="let tipos of tiposDeProduto">
+                                            <option value="{{ tipos.tipo }}"></option>
+                                        </li>
+                                    </ul>
+                                </datalist>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">marca</span>
+                                <input class="form-control inputDeta" name="pmMarca" [(ngModel)]="marca" list="datalistOptionsMarca" id="exampleDataListMarca" placeholder="Escolha um tipo...">
+                                <datalist id="datalistOptionsMarca">
+                                    <ul>
+                                        <li *ngFor="let marcas of tiposDeMarca ">
+                                            <option value="{{ marcas.tipoMarca }}"></option>
+                                        </li>
+                                    </ul>
+                                </datalist>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Descricao</span>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="descricao" name="pmDescricao"></textarea>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+   <button type="button" class="btn btn-outline-success botaoLink" (click)="atualizarProdutoApi()">Atualizar</button>
+   <a routerLink="/estoque/{{id}}"><button type="button" class="btn btn-outline-primary botaoLink">Voltar</button></a>
+</div>
